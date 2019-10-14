@@ -1,0 +1,129 @@
+<!-- <p>hey {{user.userType}}</p>
+<p *ngIf="user.userType === 'admin'">this is admin</p>
+<p *ngIf="user.userType === 'customer'">this is customer</p> -->
+<nav id="nav1" class='navbar navbar-expand-md navbar-dark d-none d-lg-block sticky-top'>
+    <div id="righti" class="container">
+        <ul class="navbar-nav ml-auto">
+            <li class='nav-item' *ngIf="user.userType === 'admin'"><a (click)="yes()" class='nav-link' routerLink="/upload">Add Product</a></li>
+            <li class='nav-item' *ngIf="user.userType !== 'admin'"><a (click)="yes()" class='nav-link' routerLink="/help">HELP</a></li>
+            <li *ngIf="userIsAuthenticated" class='nav-item'><a (click)="yes()" class='nav-link' routerLink="/ordertracker">ORDER TRACKER</a></li>
+            <li class='nav-item' *ngIf="user.userType === 'admin'"><a (click)="yes()" class='nav-link' routerLink="/msg">MESSAGES</a></li>
+            <li class='nav-item' *ngIf="userIsAuthenticated"><a (click)="yes()" class='nav-link' routerLink="/viewOrders">VIEW ORDERS</a></li>
+            <li class='nav-item' *ngIf="userIsAuthenticated"><a (click)="yes()" class='nav-link' routerLink="/" (click)="onLogout()">LOG OUT</a></li>
+            <li class='nav-item' *ngIf="!userIsAuthenticated"><a (click)="yes()" class='nav-link' routerLink="/signup">SIGNUP</a></li>
+            <li class='nav-item' *ngIf="!userIsAuthenticated"><a (click)="yes()" class='nav-link' routerLink="/login">LOG IN</a></li>
+        </ul>
+    </div>
+</nav>
+<nav id='bottom_navbar' class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <button class='navbar-toggler' data-toggle="collapse" data-target="#navco">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <a (click)="yes()" class="navbar-brand mx-auto" routerLink="/"><img id="brandlogo" class="mb-2" src="/assets/images/t.png" alt="Not found"></a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#searchi">
+    <fa-icon class="i d-block d-lg-none" [icon]="faSearch"></fa-icon>
+  </button>
+    <div *ngIf="user.userType === 'customer'" class="icon-wrapper mr-2 d-block d-lg-none">
+        <fa-icon class="i" [icon]="faShoppingCart" (click)="showDialog()"></fa-icon>
+        <span class="badge">{{itemInCart}}</span>
+    </div>
+    <div class="collapse navbar-collapse" id="navco">
+        <ul class="navbar-nav ml-5">
+            <li class='nav-item'>
+                <a class='nav-link' (click)="changeCategoryId('5d42c6607bf74adda8d4e300')">SHIRTS</a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' (click)="changeCategoryId('5d47fd488bb8213cec70bcd5')">ACCESORIES</a>
+            </li>
+            <li class='nav-item'>
+              <a class='nav-link' (click)="changeCategoryId('5d47fd5e8bb8213cec70bd09')">OTHERS</a>
+            </li>
+            <li *ngIf="!userIsAuthenticated" class='nav-item'>
+                <a class='nav-link' (click)="yes()" routerLink="/contact">CONTACT US</a>
+            </li>
+            <li class='nav-item d-block d-lg-none'>
+                <a class='nav-link' routerLink="/login">MY ACCOUNT</a>
+            </li>
+        </ul>
+        <form id="search_box" class="form-inline ml-auto">
+            <div *ngIf="user.userType === 'customer'" class="icon-wrapper mr-2 d-none d-lg-block">
+                <fa-icon class="i" [icon]="faShoppingCart" (click)="showDialog()"></fa-icon>
+                <span class="badge">{{itemInCart}}</span>
+            </div>
+            <input type="text" name="searchWord" [(ngModel)]="searchWord" class="form-control mr-2 d-none d-lg-block" placeholder="Search">
+            <button (click)="searchProduct()" (click)="yes()" type="submit" class="btn btn-outline-success d-none d-lg-block">Search</button>
+        </form>
+        <ul *ngIf="userIsAuthenticated" class="navbar-nav ml-auto">
+          <li class="nav-item dropdown mr-3">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+              <fa-icon [icon]="faUser"></fa-icon> <strong> {{username}}</strong>
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" routerLink="/dashboard">
+                <fa-icon [icon]="faUserCircle"></fa-icon> Profile
+              </a>
+              <a routerLink="/edit" class="dropdown-item">
+                <fa-icon [icon]="faCog"></fa-icon> Settings
+              </a>
+            </div>
+          </li>
+        </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="searchi">
+        <form class=" d-block d-lg-none">
+            <input type="text" name="searchWord" class="form-control" [(ngModel)]="searchWord" placeholder="Search">
+            <button (click)="searchProduct()" (click)="yes()" type="submit" class="form-control mt-2 btn btn-outline-success ">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="modal container" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="container modal-content">
+            <div class="row mt-2">
+                <div class="col-6">
+                    <h4>Cart Content</h4>
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-dark form-control" (click)="close()">Close</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h5>Total= {{items.total}}</h5>
+                <div class="container myCard">
+                        <div class="row">
+                          <div *ngFor="let prd of items.items; let i=index" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="card mt-2">
+                              <div class="card-block">
+                                <img id="image_size" [src]="prd.item.image" class="card-img-top img-fluid">
+                                <h3 class="card-title text-center">EXCLUSIVE</h3>
+                                <div class="text-center">
+                                    <p class="card-text text-muted">&nbsp;{{prd.item.name}}</p>
+                                    <p>&nbsp;${{prd.item.price}}</p>
+                                    <div id="bichmeho" class="mx-auto mb-2 mx-auto">
+                                      <button class="btn btn-danger" (click)="remove(prd.item,prd.quantity,i)">Remove</button>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                <hr>
+                <a class="btn btn-lg btn-success mb-4" (click)="yes()" routerLink='/pay' (click)="close()">Payment</a>
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-dark" (click)="close()">Close</button>
+            </div> -->
+        </div>
+    </div>
+</div>
+<div *ngIf="show">
+    <app-view-category [product_array]="product_array"></app-view-category>
+</div>
+<div *ngIf="no">
+    <app-search [products]="products"></app-search>
+</div>
+<div *ngIf="!no && !show">
+    <router-outlet></router-outlet>
+</div>

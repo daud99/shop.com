@@ -1,0 +1,16 @@
+#index-jumbotron
+{
+ /* padding-top: 10%;
+ padding-bottom: 10%; */
+ background-image:url('../../../../../public/img/h.jpg');
+ background-color: #383838;
+ background-size:cover;
+ color: white;
+ background-attachment: fixed;
+ opacity: 1;
+}
+#btn
+{
+	background-color: black;
+	color:white;
+}

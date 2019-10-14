@@ -1,0 +1,14 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+.boxi
+{
+	font-size: 25px;
+}
+.box
+{
+	font-family: entypo;
+}
+#b {
+	color: white;
+	background-color: black;
+  }

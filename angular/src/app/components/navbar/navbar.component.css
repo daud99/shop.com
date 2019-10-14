@@ -1,0 +1,101 @@
+@import url(http://weloveiconfonts.com/api/?family=zocial);
+
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+}
+
+.navbar
+{
+	background-color:black;
+}
+.dropdown-toggle::after
+{
+	display:none;
+}
+#special .dropdown-toggle::after
+{
+	display:inline-flex;
+}
+#bottom_navbar
+{
+  background-color: black;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 56 px;
+  z-index: 1020;
+  padding:15px;
+}
+#righti
+{
+  margin-right: 0px;
+}
+#search_box{
+  margin-right: 10px;
+}
+#cart_icon{
+  color:white;
+  font-size: 25px;
+}
+.icon-wrapper{
+    position:relative;
+    float:left;
+}
+.i {
+    width:100px;
+    text-align:center;
+    vertical-align:middle;
+    font-size:30px;
+    color: white;
+}
+.badge{
+    background:grey;
+    width: auto;
+    height: auto;
+    margin: 0;
+    border-radius: 50%;
+    position:absolute;
+    top:-13px;
+    right:-8px;
+    padding:5px;
+}
+
+@media only screen and (max-width: 990px) {
+  #bottom_navbar
+{
+  top: 0 px;
+}
+}
+
+#card-block {
+  height: 100%;
+}
+
+#image_size{
+  vertical-align: top;
+  max-width: 100%;
+  border: 0;
+  height: 200px;
+}
+#bichmeho{
+  margin-left: 300px;
+  display: inline-block;
+}
+
+#brandlogo {
+  width: 300px;
+}
+/* CSS used here will be applied after bootstrap.css */
+
+
+.modal-dialog{
+      overflow-y: initial !important;
+      overflow-y: scroll; 
+      max-height:85%;  
+      margin-top: 50px; 
+      margin-bottom:50px;
+    }
+.modal-body{
+  height: 80vh;
+  overflow-y: auto;
+}

@@ -1,0 +1,20 @@
+<div *ngIf="msgs"  class="container mt-5">
+    <h1 class="mb-2">MESSAGES:</h1>
+    <div *ngFor="let msg of msgs" class="card card-body mb-2">
+        <div class="card-title">
+            <h4>Name: {{msg.name}}</h4>
+            <h3 >Email: {{msg.email}} </h3>
+        </div>
+        <p>{{msg.message}}</p>
+
+        <button type="button" class="btn btn-danger" value="delete" (click)="msgDel(msg._id.toString())">Delete</button>
+    </div>
+</div>
+<div *ngIf="!msgs.length">
+    <div class="container">
+      <div class="text-center">
+          <p class="display-4"><strong>No messages are received yet!</strong></p>
+      </div>
+    </div>
+  </div>
+{{text}}

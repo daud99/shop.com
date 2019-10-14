@@ -1,0 +1,44 @@
+<div class="container mt-4" >
+    <div *ngIf="msg" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Congrats! </strong>{{msg}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <h1 class="text-center">Add New Product</h1>
+    <form [formGroup]="form" (submit)="onSubmit()">
+    <div class="row mt-5">
+      <div class="col-3"><label><strong>Name</strong></label></div>
+      <div class="col-9">
+        <input type="text" class="form-control" placeholder="Enter name" formControlName="product_name">
+      </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-3"><label><strong>Select Category</strong></label></div>
+        <div class="col-9">
+          <select class="form-control" formControlName="category_id">
+            <option *ngFor="let option of categories.categorys" value="{{option._id}}">
+              {{option.name}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-3">
+          <label><strong>Price</strong></label>
+        </div>
+        <div class="col-9">
+          <input type="text" formControlName="product_price" class="form-control" placeholder="Enter Price">
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-3"><label><strong>Select Image</strong></label></div>
+        <div class="col-9"><input type="file" class="form-control" (change)="onImagePicked($event)"></div>
+      </div>
+      <div class="row mt-4">
+        <div class="offset-6 col-3">
+          <input id="makemeblack" type="submit" value="UPLOAD" class="btn btn-default">
+        </div>
+      </div>
+    </form>
+</div>

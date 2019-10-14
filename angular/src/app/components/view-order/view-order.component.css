@@ -1,0 +1,142 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+#userTag
+{
+  color:white;
+}
+section
+{
+  padding: 5%;
+}
+.boxi
+{
+	font-size: 25px;
+}
+#load_btn
+{
+	color: white;
+	background-color: black;
+}
+.card-img-top
+{
+	min-width: 100%;
+	width: auto;
+	height: auto;
+	object-fit: cover;
+}
+.card
+{
+	display: block;
+	margin-bottom: 20px;
+}
+
+#frm
+{
+	padding: 40px;
+}
+#inli
+{
+	display:inline;
+}
+.line
+{
+	background-color: #868e96;
+}
+.angotha
+{
+	cursor:pointer;
+	user-select:none;
+}
+.ungli
+{
+	color:white;
+}
+.ari
+{
+	background-color: black;
+}
+#btn
+{
+	background-color: black;
+	color:white;
+}
+#coat-jumbotron
+{
+ padding-top: 8%;
+ padding-bottom: 8%;
+ background-image:url("https://cdn.allwallpaper.in/wallpapers/1920x1080/4745/guns-men-skulls-suit-weapons-1920x1080-wallpaper.jpg");
+ background-size:cover;
+ color: white;
+ background-attachment: fixed;
+}
+#index-jumbotron
+{padding-top: 10%;
+ padding-bottom: 15%;
+ background-image:url("https://cdn.allwallpaper.in/wallpapers/1920x1080/4745/guns-men-skulls-suit-weapons-1920x1080-wallpaper.jpg");
+ background-size:cover;
+ color: white;
+ background-attachment: fixed;
+}
+#carouselExampleIndicators
+{
+	padding-bottom:20px;
+}
+.c
+{
+	color: black;
+}
+#foot
+{
+ background-color:black;
+ color: white;
+ padding: 20px;
+}
+.box
+{
+	font-family: entypo;
+}
+.myCard
+{
+	padding: 10px;
+}
+.navbar
+{
+	background-color:black;
+}
+.dropdown-toggle::after
+{
+	display:none;
+}
+#special .dropdown-toggle::after
+{
+	display:inline-flex;
+}
+#menu
+{
+  color:#868e96;
+  padding: 5px;
+}
+#searchbar
+{
+  background-color: #E8E8E8;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50px;
+ 
+}
+#searchBtn
+{
+  padding-left:15%;
+  padding-right:15%;
+}
+#nalho
+{
+  padding: 0px;
+}

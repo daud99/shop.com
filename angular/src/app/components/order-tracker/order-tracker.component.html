@@ -1,0 +1,56 @@
+<section id="a" *ngIf="!order">
+  <div class="container" id="frm">
+    <div class="text-center">
+      <h1 class="makemeblack"><strong>Order Tracker</strong></h1>
+      <p class="text-muted">Start track an order, by entering your Order Number.</p>
+      <form [formGroup]="myForm" (submit)="onSubmit()">
+        <div class="row">
+          <div class="offset-md-4 col-lg-4">
+            <div class="form-group">
+              <input type="Number" formControlName="orderno" class="form-control" placeholder="Enter your order no.">
+            </div>
+          </div>
+          <br>
+          <div class="offset-md-4 col-lg-4">
+            <div class="input-group">
+              <br>
+              <div class="mx-auto"><input id="b" type="submit" name="submit" value="FIND ORDER" class="btn btn-dark"></div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<div>
+    <section *ngIf="order">
+        <table class="container">
+          <thead>
+            <tr>
+              <th><h1>Order#</h1></th>
+              <th><h1>Customer Name</h1></th>
+              <th><h1>Delivery Date</h1></th>
+              <th><h1>Bill</h1></th>
+              <th><h1>Status</h1></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{order.orderno}}</td>
+              <td>{{order.cust_name}}</td>
+              <td>{{order.delivery_date}}</td>
+              <td>{{order.total}}$</td>
+              <td>{{order.status}}</td>
+            </tr>
+          </tbody>
+        </table>
+  </section>
+</div>
+
+<div *ngIf="!order" id="c">
+    <div class="container mt-5">
+      <div class="text-center">
+          <p class="display-4">No order found!</p>
+      </div>
+    </div>
+  </div>

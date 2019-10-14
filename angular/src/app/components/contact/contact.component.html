@@ -1,0 +1,71 @@
+<section class="mt-5">
+  <div class="container">
+    <div *ngIf="message" class="alert alert-success">
+      {{message}}
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        <form>
+          <h3>Contact Us</h3>
+          <p>We are here to answer your questions you may have regarding anything about us. Reach out us and we will
+            response as soon as possible.</p>
+          <p>Even if something you have always wanted to experience and can't find on TRANCHULAS ecommerce site, let us know we
+            promise we'll do our best to do it for you.</p>
+          <div class="row">
+            <div class="col-md-5 form-group">
+              <input type="text" name="name" [(ngModel)]="msg.name" placeholder="Name" class="form-control" required>
+            </div>
+            <div class="offset-md-2 col-md-5 form-group">
+              <input type="email" name="email" [(ngModel)]="msg.email" placeholder="Enter Email" class="form-control" required>
+            </div>
+          </div>
+          <h5>Message</h5>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <textarea name="message" [(ngModel)]="msg.message" rows="4" class="form-control" required></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="offset-md-10 col-md-2 mx-auto">
+              <div class="form-group ">
+                <input id="b" type="submit" name="submit" value="SEND" (click)="onSubmit()" class="form-control btn-lg">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-3">
+        <h4>EMAIL</h4>
+        <div class="">
+          daudahmed870@gmail.com
+        </div>
+        <br>
+        <h4>TELEPHONE</h4>
+        <div class="">
+          Not Available
+          <br>
+          Sorry!
+        </div>
+        <br>
+        <h4>SKYPE</h4>
+        <div class="">
+          ch.daud786
+        </div>
+        <br>
+        <h4>ADDRESS</h4>
+        <div class="">
+            2nd Floor, Evacuee Trust Complex, Sir، Agha Khan Rd, F-5, Islamabad, Islamabad Capital Territory
+        </div>
+        <br>
+        <div class="box boxi">
+          <a target='_blank' href="https://www.facebook.com/tranchulas/">&#62220;</a>
+          <a target='_blank' href="https://www.facebook.com/tranchulas/">&#62217;</a>
+          <a target='_blank' href="https://www.facebook.com/tranchulas/">&#62223;</a>
+          <a target='_blank' href="https://www.facebook.com/tranchulas/">&#62253;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

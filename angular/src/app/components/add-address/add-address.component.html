@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark p-0">
+    <div class="container">
+      <div>
+        <ul class="navbar-nav">
+          <li class="nav-item px-2">
+            <a class="nav-link" routerLink="/dashboard">Account Info</a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link" routerLink="/showAddress">Address Info</a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link">Orders</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="text-center">
+  <p class="display-4">Add Address</p>
+</div>
+<div class="container mt-4">
+  <form action="">
+    <div class="form-group">
+      <input type="text" placeholder="First Name" class="form-control">
+    </div>
+    <div class="form-group">
+        <input type="text" placeholder="Last Name" class="form-control">
+    </div>
+    <div class="form-group">
+        <input type="text" placeholder="Street Address" class="form-control">
+    </div>
+    <div class="form-group">
+        <input type="text" placeholder="City" class="form-control">
+    </div>
+    <div class="form-group">
+        <input type="text" placeholder="State/Province" class="form-control">
+    </div>
+    <div class="form-group">
+      <select class="form-control" name="user_type" required>
+        <option selected>--Select Address Type--</option>
+        <option>Billing Address</option>
+        <option>Delivery Address</option>
+        <option>Both Billing and Delivery Address</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-default">Save Address</button>
+    </div>
+  </form>
+</div>

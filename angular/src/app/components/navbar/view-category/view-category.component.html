@@ -1,0 +1,34 @@
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3>Quantity={{cart.quantity}}</h3><input type="text" [(ngModel)]="cart.quantity" name="quantity">
+                <hr>
+                <button type="button" class="btn btn-success" (click)="sub()">Add To</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" (click)="close()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container myCard mt-4">
+    <div class="row">
+        <div *ngFor="let prd of product_array; let i=index" class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="card">
+                <div class="card-block">
+                    <img id="image_size" [src]="prd.image" class="card-img-top img-fluid">
+                    <h3 class="card-title text-center">EXCLUSIVE</h3>
+                    <div class="text-center">
+                        <p class="card-text text-muted">&nbsp;{{prd.name}}</p>
+                        <p>&nbsp;${{prd.price}}</p>
+                        <div id="bichmeho" class="mx-auto mb-2 mx-auto">
+                            <button *ngIf="u" class="btn btn-success" (click)="open(i,prd)">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

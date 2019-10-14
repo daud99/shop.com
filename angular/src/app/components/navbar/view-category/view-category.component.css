@@ -1,0 +1,29 @@
+.card-img-top
+{
+	min-width: 100%;
+	width: auto;
+	height: auto;
+	object-fit: cover;
+}
+.card
+{
+	display: block;
+  margin-bottom: 20px;
+}
+
+
+.myCard
+{
+  padding: 10px;
+}
+
+#image_size{
+  vertical-align: top;
+  max-width: 100%;
+  border: 0;
+  height: 200px;
+}
+#bichmeho{
+  margin-left: 300px;
+  display: inline-block;
+}
